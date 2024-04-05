@@ -9,7 +9,6 @@ import {
   skillsSection,
   openSource,
   blogSection,
-  talkSection,
   achievementSection
 } from "../../portfolio";
 
@@ -20,7 +19,7 @@ function Header() {
   const viewSkills = skillsSection.display;
   const viewAchievement = achievementSection.display;
   const viewBlog = blogSection.display;
-  const viewTalks = talkSection.display;
+ // const viewTalks = talkSection.display;
 
   return (
     <Headroom>
@@ -30,7 +29,7 @@ function Header() {
           <span className="logo-name">{greeting.username}</span>
           <span className="grey-color">/&gt;</span>
         </a>
-        <input className="menu-btn" type="checkbox" id="menu-btn" />
+        < input className="menu-btn" type="checkbox" id="menu-btn" />
         <label
           className="menu-icon"
           htmlFor="menu-btn"
@@ -49,11 +48,7 @@ function Header() {
               <a href="#experience">Work Experiences</a>
             </li>
           )}
-          {viewOpenSource && (
-            <li>
-              <a href="#opensource">Open Source</a>
-            </li>
-          )}
+         
           {viewAchievement && (
             <li>
               <a href="#achievements">Achievements</a>
@@ -61,14 +56,10 @@ function Header() {
           )}
           {viewBlog && (
             <li>
-              <a href="#blogs">Blogs</a>
+              <a href="#blogs">Portfolio</a>
             </li>
           )}
-          {viewTalks && (
-            <li>
-              <a href="#talks">Talks</a>
-            </li>
-          )}
+    
           <li>
             <a href="#contact">Contact Me</a>
           </li>

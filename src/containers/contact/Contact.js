@@ -1,14 +1,14 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import "./Contact.scss";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
-import {illustration, contactInfo} from "../../portfolio";
-import {Fade} from "react-reveal";
+import { illustration, contactInfo } from "../../portfolio";
+import { Fade } from "react-reveal";
 import email from "../../assets/lottie/email";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function Contact() {
-  const {isDark} = useContext(StyleContext);
+  const { isDark } = useContext(StyleContext);
   return (
     <Fade bottom duration={1000} distance="20px">
       <div className="main contact-margin-top" id="contact">
@@ -31,24 +31,47 @@ export default function Contact() {
             >
               {contactInfo.number && (
                 <>
-                  <a
-                    className="contact-detail"
-                    href={"tel:" + contactInfo.number}
-                  >
-                    {contactInfo.number}
-                  </a>
+                  <p className="contact-detail">{contactInfo.number}</p>
                   <br />
                   <br />
                 </>
               )}
-              <a
-                className="contact-detail-email"
-                href={"mailto:" + contactInfo.email_address}
-              >
-                {contactInfo.email_address}
-              </a>
+              <p className="contact-detail-email">
+                <a href={"mailto:" + contactInfo.email_address}>
+                  {contactInfo.email_address}
+                </a>
+              </p>
               <br />
               <br />
+              {contactInfo.location && (
+                <>
+                  <p className="contact-detail">{contactInfo.location}</p>
+                  <br />
+                  <br />
+                </>
+              )}
+              {/* Displaying three other attributes */}
+              {contactInfo.attribute1 && (
+                <>
+                  <p className="contact-detail">{contactInfo.attribute1}</p>
+                  <br />
+                  <br />
+                </>
+              )}
+              {contactInfo.attribute2 && (
+                <>
+                  <p className="contact-detail">{contactInfo.attribute2}</p>
+                  <br />
+                  <br />
+                </>
+              )}
+              {contactInfo.attribute3 && (
+                <>
+                  <p className="contact-detail">{contactInfo.attribute3}</p>
+                  <br />
+                  <br />
+                </>
+              )}
               <SocialMedia />
             </div>
           </div>
@@ -59,7 +82,7 @@ export default function Contact() {
               <img
                 alt="Man working"
                 src={require("../../assets/images/contactMailDark.svg")}
-              ></img>
+              />
             )}
           </div>
         </div>
